@@ -4,7 +4,7 @@ i. **Everything In Java Script Happen Inside an "Execution Context"**
 
 ii. **Java Script is a 'Synchronous' & 'Single Threaded Language'**
 
-# Execution Context
+## Execution Context
 1. Whenever any JavaScript code is executed an execution context is created and it is the Global Execution Context.
 2. An Execution Context is basically a box which has two components called Memory Component(Variable Environment) and Code Component(Thread Of Execution).
 3. The Execution context is created in two phases
@@ -32,7 +32,7 @@ ii. **Java Script is a 'Synchronous' & 'Single Threaded Language'**
 7. Function declarations are scanned and are made available
 
 
-### Block Scope and Shadowing
+## Block Scope and Shadowing
 
 1. Code inside curly bracket is called block.
 2. Multiple statements are grouped inside a block so it can be written where JS expects single statements like in if, else, loop, function etc.
@@ -42,7 +42,7 @@ ii. **Java Script is a 'Synchronous' & 'Single Threaded Language'**
 6. shadowing let with var is illegal shadowing and gives error.
 7. var value is stored in nearest outer function or global scope and hence can be accessed outside block as well whereas same is not the case with let and const.
 
-#### JS Architecture
+## JS Architecture
 
 1. JS runtime environment contains all elements required to run JS.
 2. It contains JS engine, set of API's, callback queue, microtask queue, event loop.
