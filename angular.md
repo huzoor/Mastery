@@ -5,13 +5,13 @@ Directives in Angular are classes that add extra behaviors to HTML elements (DOM
 
 1. Component Directives 
   - Component name as Directive 
-  - Ex. <app-component> </app-component>
+  - Ex. ```<app-component> </app-component>```
   
 2. Structural Directives
   - *ngIf
   - *ngFor
   - *ngSwitch
-  - ng-template
+  - ```<ng-template>```
 
 3. Attribute Directives 
   - ngStyle
