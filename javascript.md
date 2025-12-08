@@ -93,3 +93,10 @@ for (const num of numberGenerator(5)) {
   console.log(num);
 }
 ```
+
+### this keyword
+
+  - JavaScript's "this" keyword can be confusing for many and behaves differently in various scenarios.
+  - The behavior of the "this" keyword depends on the context, such as whether it's in a function, global space, or an arrow function.
+  - Inside a function, the value of "this" can be undefined in strict mode or the global object in non-strict mode.
+  - "this" can be substituted with **globalWindow Object in non-strict mode**, in **strict mode it's undefined**
