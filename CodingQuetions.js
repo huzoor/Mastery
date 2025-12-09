@@ -15,7 +15,6 @@ console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
 // arr1.slice(-1) → returns an array containing the last element:
 
 
-
 // Functon Currying=========
 function multiply(a) {
 
@@ -39,6 +38,31 @@ console.log(result())
 var result2 = multiply(2,3,4)
 
 console.log(result2)
+
+// bestBuySellPair==================
+
+function bestBuySellPair(prices) {
+  let minPrice = Infinity;   // 1) start with +∞ so first price becomes minPrice
+  let bestBuy = null;        // 2) will hold the buy price that produced maxProfit
+  let bestSell = null;       // 3) will hold the sell price that produced maxProfit
+  let maxProfit = 0;         // 4) best profit seen so far (0 means "no profit yet")
+
+  for (let price of prices) {            // 5) iterate each price once (left → right)
+    if (price < minPrice) minPrice = price;  // 6) update lowest price seen so far
+
+    const profit = price - minPrice;    // 7) profit if we bought at minPrice and sell now
+    if (profit > maxProfit) {           // 8) is this profit better than any previous?
+      maxProfit = profit;               // 9) update best profit
+      bestBuy = minPrice;               //10) record buy price that gave this profit
+      bestSell = price;                 //11) record sell price that gave this profit
+    }
+  }
+
+  return [bestSell, bestBuy];   //12) return the pair (sell, buy) — you can swap order if you prefer
+}
+//bestBuySellPair = {  bestBuy: 1, bestSell: 6 }
+
+
 
 
 // Valid Parathesis Problem===============
