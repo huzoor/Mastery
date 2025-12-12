@@ -1,3 +1,49 @@
+//You receive customer events from an API like this:
+
+// type Event = {
+// customerId: string;
+// type: 'LOGIN' | 'PURCHASE' | 'RENEWAL';
+// timestamp: number;
+// };
+
+// Write a function that:
+
+// Groups events by customerId
+// Sorts each customer’s events by timestamp (ascending)
+// Returns a summary object in this shape:
+// {
+// [customerId]: {
+// lastEventType: string;
+// eventCount: number;
+// }
+// }
+
+Starter skeleton:
+function summarizeEvents(events) {
+  
+  const grouped = events.reduce((acc, evt)=>{
+    if(!acc[evt.customerId]) acc[evt.customerId] = []
+    acc[evt.customerId].push(evt);
+    return acc
+  }, {})
+  
+  const summary = {}
+  for(let customerId in grouped){
+    const list = grouped[customerId];
+    list.sort((a,b)=> a.timestamp - b.timestamp);
+    
+    const lastEvent = list[list.length -1]
+    
+    summary[customerId] = {
+      lastEventType: lastEvent.type;
+      eventCount: list.length;
+    }
+  }
+      
+  return summary
+      
+}
+
 
 // Object and related changes==============
 var arr1 = "john".split('');
